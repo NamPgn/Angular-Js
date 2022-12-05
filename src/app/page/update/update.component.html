@@ -1,0 +1,7 @@
+<form *ngIf="form" [formGroup]="form" (ngSubmit)="editingProduct()">
+    <div class="form-group">
+        <label>Nam</label>
+        <input type="text" class="form-control" formControlName="name">
+    </div>
+    <button class="btn btn-success" >Enregistrer</button>
+</form>

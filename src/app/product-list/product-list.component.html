@@ -1,0 +1,55 @@
+<p>{{title}}</p>
+
+<!-- <button (click)="getList()">Click</button>
+ <div class="a" *ngFor="let item of product">
+    {{item.name}} <button (click)="remove(item.id)">remove</button>
+</div> 
+<br> -->
+
+
+
+<!-- các nút khác  -->
+<!-- sự kiện submit lên cái value và khi nhập vào form -->
+
+<button type="button" class="btn btn-primary">
+    <a style="color: #fff;" [routerLink]="['/product/add-product']">Add product</a>
+</button>
+<div *ngFor="let item of products">
+    <li class="list-group-item">
+        <!-- Custom content-->
+        <div class="media align-items-lg-center flex-column flex-lg-row p-3">
+            <div class="media-body order-2 order-lg-1">
+                <h5 class="mt-0 font-weight-bold mb-2"> <a [routerLink]="['/product/detailProduct',item._id]" class="b">
+                        {{item.name}}
+                    </a>
+                </h5>
+                <p class="font-italic text-muted mb-0 small">128 GB ROM | 15.49 cm (6.1 inch) Display 12MP Rear Camera |
+                    7MP Front Camera A12 Bionic Chip Processor</p>
+                <div class="d-flex align-items-center justify-content-between mt-1">
+                    <h6 class="font-weight-bold my-2">₹64,999</h6>
+                    <ul class="list-inline small">
+                        <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+                        <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+                        <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+                        <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+                        <li class="list-inline-item m-0"><i class="fa fa-star-o text-gray"></i></li>
+                    </ul>
+                </div>
+            </div><img [routerLink]="['/product/detailProduct',item._id]"
+                src="https://img-cdn.xemgame.com/2022/09/12/skin-fanart-yasuo-yone-4.jpg"
+                alt="Generic placeholder image" width="200" class="ml-lg-5 order-1 order-lg-2">
+        </div> <!-- End -->
+    </li>
+
+    <button type="button" class="btn btn-info" (click)="removeItem(item._id)">Delete</button>
+
+    <button type="button" class="btn btn-success"><a [routerLink]="['/product/update',item._id]"
+            style="color: #000;">Edit
+            product</a></button>
+    <button type="button" class="btn btn-warning"><a [routerLink]="['/product/detailProduct',item._id]"
+            style="color: #000;">Detail</a>
+    </button>
+</div>
+<router-outlet></router-outlet>
+
+<!-- sửa -->
